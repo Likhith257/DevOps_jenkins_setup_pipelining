@@ -1,4 +1,4 @@
-# Jenkins with Python Pipelining Project Integration
+# Jenkins with Pipeline Project Integration
 
 This repository demonstrates how to set up Jenkins, configure it to pull a Python project from GitHub, and execute a Python script in a CI/CD pipeline.
 
@@ -6,7 +6,7 @@ This repository demonstrates how to set up Jenkins, configure it to pull a Pytho
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation of Jenkins](#installation-of-jenkins)
-- [Setting Up Jenkins for Python Projects](#setting-up-jenkins-for-python-projects)
+- [Setting Up Jenkins for Pipeline Projects](#setting-up-jenkins-for-pipeline-projects)
 - [Running Python Script from GitHub Repo](#running-python-script-from-github-repo)
 - [Contributing](#contributing)
 - [License](#license)
@@ -64,7 +64,7 @@ sudo apt install jenkins
 - **Windows**:
 Download the Jenkins installer from the official Jenkins website [here](https://www.jenkins.io/download).
 
-## Setting Up Jenkins for Python Projects
+## Setting Up Jenkins for Pipeline Projects
 #### Install Jenkins Plugins
 
 - **Plugins**: 
@@ -119,7 +119,7 @@ Navigate to the job's page on Jenkins.
 
 Click Build Now to manually trigger a build.
 
-Jenkins will:Clone your GitHub repository.
+Jenkins will: Clone your GitHub repository.
 
 Run the Python script specified in the pipeline configuration.
 
