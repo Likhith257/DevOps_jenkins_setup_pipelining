@@ -25,7 +25,7 @@ This repository demonstrates how to set up Jenkins, configure it to pull a Pytho
 ### Prerequisites
 Before you install Jenkins, ensure that you have the following:
 
-- **Git**:  Jenkins uses Git to clone the repository. Install Git from [here]  (https://git-scm.com/downloads)
+- **Git**:  Jenkins uses Git to clone the repository. Install Git from [here](https://git-scm.com/downloads).
 
 - **Java**: Jenkins requires Java to run. Install Java 8 or higher.
   
@@ -36,7 +36,7 @@ Before you install Jenkins, ensure that you have the following:
   ```
 
   #### Install Java (Windows):
-  Download and install Java from the official Oracle website [here]. (https://www.oracle.com/java/technologies/downloads/#jdk21-windows)
+  Download and install Java from the official Oracle website [here](https://www.oracle.com/java/technologies/downloads/#jdk21-windows).
 
 - **Python**:  Jenkins will use Python to run your Python scripts. Install Python 3.8 or higher.
 
@@ -47,7 +47,7 @@ Before you install Jenkins, ensure that you have the following:
   ```
   
   #### Install Python (Windows):
-  Download and install Python from official Python website [here]. (https://www.python.org/downloads/)
+  Download and install Python from official Python website [here](https://www.python.org/downloads/).
 
 ### Install Jenkins
 - **Linux** (Ubuntu/Debian):
@@ -62,7 +62,7 @@ sudo apt install jenkins
 ```
 
 - **Windows**:
-Download the Jenkins installer from the official Jenkins website [here]. (https://www.jenkins.io/download)
+Download the Jenkins installer from the official Jenkins website [here](https://www.jenkins.io/download).
 
 ## Setting Up Jenkins for Python Projects
 #### Install Jenkins Plugins
@@ -77,7 +77,7 @@ Similarly, search for Python Plugin and install it.
 Go to Jenkins Dashboard and click on New Item.
 Enter a name for your job (e.g., "Pipelining GitHub Project") and select Pipeline project. Click Ok
 Scroll down  to the Pipeline section and click on the "Pipeline script" dropdown menu and select "Pipeline script"
-Click on Try Sample Pipeline and edit and paste the following code into the script editor:
+Click on Try Sample Pipeline "Hello World" to check and edit and paste the following code into the script editor:
 ```
 pipeline {
     agent any
