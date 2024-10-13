@@ -46,7 +46,7 @@ Before you install Jenkins, ensure that you have the following:
   #### Install Python (Windows):
   Download and install Python from official Python website. https://www.python.org/downloads/
 
-### Install Jenkins
+### Installation of Jenkins
 - **Linux** (Ubuntu/Debian):
 ```
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
