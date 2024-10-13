@@ -1,6 +1,6 @@
-# Jenkins with Python Project Integration
+# Jenkins with Python Pipelining Project Integration
 
-This repository explains how to set up Jenkins, configure it to pull a Python project from GitHub, and execute a Python script.
+This repository demonstrates how to set up Jenkins, configure it to pull a Python project from GitHub, and execute a Python script in a CI/CD pipeline.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -64,9 +64,10 @@ Download the Jenkins installer from the official Jenkins website. https://www.je
 ## Setting Up Jenkins for Python Projects
 #### Install Jenkins Plugins
 
-- **Git Plugin**: This allows Jenkins to pull code from a GitHub repository.
+- **Plugins**: 
 Go to Manage Jenkins > Manage Plugins > Available.
 Search for Git Plugin and install it.
+Search for Pipeline Plugin and install it
 Similarly, search for Python Plugin and install it.
 
 - **Configure Jenkins Job**:
@@ -87,12 +88,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '8cc37c72-394e-4d31-97f0-05b40a4a4f87', url: 'https://github.com/Likhithv257/aiml_devops-jenkins']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '8cc37c72-394e-4d31-97f0-05b40a4a4f87', url: 'https://github.com/Likhithv257/aiml_devops-jenkins']]) //  Replace with your GitHub repository URL and credentials ID
+
             }
         }
         stage('Build') {
             steps {
-                git branch: 'main', changelog: false, credentialsId: '8cc37c72-394e-4d31-97f0-05b40a4a4f87', poll: false, url: 'https://github.com/Likhithv257/aiml_devops-jenkins.git'
+                git branch: 'main', changelog: false, credentialsId: '8cc37c72-394e-4d31-97f0-05b40a4a4f87', poll: false, url: 'https://github.com/Likhithv257/aiml_devops-jenkins.git' //  Replace with your GitHub repository URL and credentials ID
                 bat 'python sort.py' // or  use sh 'python3 sort.py' for Linux
             }
         }
@@ -104,28 +106,21 @@ pipeline {
     }
 }
 ```
-
-https://github.com/yourusername/your-repo.git
-Add a Build Step:
-
-For Linux: Execute Shell
-```
-python3 your_script.py
-```
-For Windows: Execute Windows batch command
-```
-python your_script.py
-```
-Save the job configuration.
+This script will clone the repository, run the Python script, and then test the code. You can Save the job configuration.
 
 ## Running Python Script from GitHub Repo
 
-After setting up the job, navigate to the job's page in Jenkins.
-Click on Build Now to manually trigger a build.
-Jenkins will:
-Clone your GitHub repository.
-Run the Python script specified in the build step.
-You can view the build progress and results by clicking on the Console Output link after the build starts.
+Once you've set up the job:
+
+Navigate to the job's page on Jenkins.
+
+Click Build Now to manually trigger a build.
+
+Jenkins will:Clone your GitHub repository.
+
+Run the Python script specified in the pipeline configuration.
+
+You can monitor the build progress and see detailed logs by clicking on Console Output after the build starts.
 
 ## Contributing
 
