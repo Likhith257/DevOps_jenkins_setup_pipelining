@@ -34,3 +34,12 @@ Before you install Jenkins, ensure that you have the following:
 
   #### Install Java (Windows):
   Download and install Java from the official Oracle website. https://www.oracle.com/java/technologies/downloads/#jdk21-windows
+
+- **Python**:  Jenkins will use Python to run your Python scripts. Install Python 3.8 or higher.
+
+ #### Install Python (Linux):
+ ```
+ sudo apt update
+ sudo apt install python3
+ ```
+
