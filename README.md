@@ -37,9 +37,9 @@ Before you install Jenkins, ensure that you have the following:
 
 - **Python**:  Jenkins will use Python to run your Python scripts. Install Python 3.8 or higher.
 
- #### Install Python (Linux):
- ```
- sudo apt update
- sudo apt install python3
- ```
+  #### Install Python (Linux):
+  ```
+  sudo apt update
+  sudo apt install python3
+  ```
 
