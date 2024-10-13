@@ -46,7 +46,7 @@ Before you install Jenkins, ensure that you have the following:
   #### Install Python (Windows):
   Download and install Python from official Python website. https://www.python.org/downloads/
 
-### Installation of Jenkins
+### Install Jenkins
 - **Linux** (Ubuntu/Debian):
 ```
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
@@ -59,4 +59,32 @@ sudo apt install jenkins
 ```
 
 - **Windows**:
-Download the Jenkins installer from the official Jenkins website. https://www.jenkins.io/download/
+Download the Jenkins installer from the official Jenkins website. https://www.jenkins.io/download
+
+## Setting Up Jenkins for Python Projects
+#### Install Jenkins Plugins
+- **Git Plugin**: This allows Jenkins to pull code from a GitHub repository.
+Go to Manage Jenkins > Manage Plugins > Available.
+Search for Git Plugin and install it.
+Python Plugin: This allows Jenkins to run Python scripts.
+Similarly, search for Python Plugin and install it.
+
+- **Configure Jenkins Job**:
+Go to Jenkins Dashboard and click on New Item.
+Enter a name for your job (e.g., "Python GitHub Project") and select Freestyle project.
+Under Source Code Management, choose Git and enter your GitHub repository URL:
+
+https://github.com/yourusername/your-repo.git
+Add a Build Step:
+
+For Linux: Execute Shell
+
+bash
+Copy code
+python3 your_script.py
+For Windows: Execute Windows batch command
+
+bash
+Copy code
+python your_script.py
+Save the job configuration.
