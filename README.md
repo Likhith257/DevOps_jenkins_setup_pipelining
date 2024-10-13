@@ -42,4 +42,21 @@ Before you install Jenkins, ensure that you have the following:
   sudo apt update
   sudo apt install python3
   ```
+  
+  #### Install Python (Windows):
+  Download and install Python from official Python website. https://www.python.org/downloads/
 
+### Install Jenkins
+- **Linux** (Ubuntu/Debian):
+```
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+    https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null  
+sudo apt update
+sudo apt install jenkins
+```
+
+- **Windows**:
+Download the Jenkins installer from the official Jenkins website. https://www.jenkins.io/download/
