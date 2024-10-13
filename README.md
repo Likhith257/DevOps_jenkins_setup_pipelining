@@ -100,3 +100,6 @@ You can view the build progress and results by clicking on the Console Output li
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to submit a pull request or open an issue.
 
+## License
+
+This project is licensed under the MIT License. See LICENSE.txt for details.
