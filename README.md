@@ -29,8 +29,8 @@ Before you install Jenkins, ensure that you have the following:
   #### Install Java (Linux):
   ```bash
   sudo apt update
-  sudo apt install openjdk-11-jdk or download jdk deb package in https://www.oracle.com/java/technologies/downloads/#jdk21-linux
+  sudo apt install openjdk-21-jdk 
 
   #### Install Java (Windows):
-  Download and install Java from the official Oracle website. https://www.oracle.com/java/technologies/downloads/#jdk21-windows
   
+  Download and install Java from the official Oracle website. https://www.oracle.com/java/technologies/downloads/#jdk21-windows
