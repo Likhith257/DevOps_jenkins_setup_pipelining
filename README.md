@@ -63,10 +63,10 @@ Download the Jenkins installer from the official Jenkins website. https://www.je
 
 ## Setting Up Jenkins for Python Projects
 #### Install Jenkins Plugins
+
 - **Git Plugin**: This allows Jenkins to pull code from a GitHub repository.
 Go to Manage Jenkins > Manage Plugins > Available.
 Search for Git Plugin and install it.
-Python Plugin: This allows Jenkins to run Python scripts.
 Similarly, search for Python Plugin and install it.
 
 - **Configure Jenkins Job**:
@@ -78,13 +78,20 @@ https://github.com/yourusername/your-repo.git
 Add a Build Step:
 
 For Linux: Execute Shell
-
-bash
-Copy code
+```
 python3 your_script.py
+```
 For Windows: Execute Windows batch command
-
-bash
-Copy code
+```
 python your_script.py
+```
 Save the job configuration.
+
+## Running Python Script from GitHub Repo
+
+After setting up the job, navigate to the job's page in Jenkins.
+Click on Build Now to manually trigger a build.
+Jenkins will:
+Clone your GitHub repository.
+Run the Python script specified in the build step.
+You can view the build progress and results by clicking on the Console Output link after the build starts.
