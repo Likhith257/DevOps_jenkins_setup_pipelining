@@ -95,3 +95,8 @@ Jenkins will:
 Clone your GitHub repository.
 Run the Python script specified in the build step.
 You can view the build progress and results by clicking on the Console Output link after the build starts.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to submit a pull request or open an issue.
+
