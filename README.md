@@ -71,8 +71,39 @@ Similarly, search for Python Plugin and install it.
 
 - **Configure Jenkins Job**:
 Go to Jenkins Dashboard and click on New Item.
-Enter a name for your job (e.g., "Python GitHub Project") and select Freestyle project.
-Under Source Code Management, choose Git and enter your GitHub repository URL:
+Enter a name for your job (e.g., "Pipelining GitHub Project") and select Pipeline project. Click Ok
+Scroll down  to the Pipeline section and click on the "Pipeline script" dropdown menu and select "Pipeline script"
+Click on Try Sample Pipeline and edit and paste the following code into the script editor:
+```
+pipeline {
+    agent any
+
+    environment {
+        PYTHON_HOME = 'C:\\Users\\likhi\\AppData\\Local\\Programs\\Python\\Python312'  // Path to your Python installation
+        PATH = "${PYTHON_HOME};${PATH}"   // Add Python to the system PATH
+
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '8cc37c72-394e-4d31-97f0-05b40a4a4f87', url: 'https://github.com/Likhithv257/aiml_devops-jenkins']])
+            }
+        }
+        stage('Build') {
+            steps {
+                git branch: 'main', changelog: false, credentialsId: '8cc37c72-394e-4d31-97f0-05b40a4a4f87', poll: false, url: 'https://github.com/Likhithv257/aiml_devops-jenkins.git'
+                bat 'python sort.py' // or  use sh 'python3 sort.py' for Linux
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing is done"
+            }
+        }
+    }
+}
+```
 
 https://github.com/yourusername/your-repo.git
 Add a Build Step:
