@@ -91,13 +91,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '8cc37c72-394e-4d31-97f0-05b40a4a4f87', url: 'https://github.com/Likhithv257/aiml_devops-jenkins']]) //  Replace with your GitHub repository URL and credentials ID
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '8cc37c72-394e-4d31-97f0-05b40a4a4f87', url: 'https://github.com/Likhithv257/DevOps_jenkins_setup_pipelining']]) //  Replace with your GitHub repository URL and credentials ID
 
             }
         }
         stage('Build') {
             steps {
-                git branch: 'main', changelog: false, credentialsId: '8cc37c72-394e-4d31-97f0-05b40a4a4f87', poll: false, url: 'https://github.com/Likhithv257/aiml_devops-jenkins.git' //  Replace with your GitHub repository URL and credentials ID
+                git branch: 'main', changelog: false, credentialsId: '8cc37c72-394e-4d31-97f0-05b40a4a4f87', poll: false, url: 'https://github.com/Likhithv257/DevOps_jenkins_setup_pipelining.git' //  Replace with your GitHub repository URL and credentials ID
                 bat 'python sort.py' // or  use sh 'python3 sort.py' for Linux
             }
         }
